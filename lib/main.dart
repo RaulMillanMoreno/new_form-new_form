@@ -47,28 +47,29 @@ class _MyCustomFormState extends State<MyCustomForm> {
           controller: myController,
         ),
       ),
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showModalBottomSheet(
-            backgroundColor: Colors.transparent,
-            context: context,
+          showModalBottomSheet(//se trata de un modalbottomsheet
+            backgroundColor: Colors.transparent,//esto hace que el fondo sea transparente
+            context: context,//este es el contexto de la aplicación
             builder: (BuildContext context) {
               return Container(
-                decoration: const BoxDecoration(
+                decoration: const BoxDecoration(//esta parte permite hacer diferentes decoraciones como el color y los bordes del contenedor
                   color: Colors.amber,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25),
                   ),
                 ),
-                height: 200,
+                height: 200,//esta es la altura del bottonsheet
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Text('Modal Bottom Sheet'),
-                      ElevatedButton(
+                    children: [//aqui estan los diferentes elementos que estan dentro del container
+                      const Text('Modal Bottom Sheet'),// este es el titulo del modal
+                      ElevatedButton(//este boton no permitira cerrar el container.
                         onPressed: () => Navigator.of(context).pop(), 
                         child: const Text('close bottomsheet'),
                         )
@@ -79,17 +80,17 @@ class _MyCustomFormState extends State<MyCustomForm> {
             },
           );  
 
-          // showDialog(context: context,
-          //   barrierDismissible: true, 
+          // showDialog(context: context, 
+          //   barrierDismissible: true, //te permite cerrar el diálogo al tocar fuera de él
           //   builder: (BuildContext context){
-          //     return SimpleDialog(
-          //       title: const Text('Hola'),
-          //       children: [
+          //     return SimpleDialog( //se trata de un simpledialog
+          //       title: const Text('Hola'), //este es el titulo del dialogo
+          //       children: [ 
           //         SimpleDialogOption(
           //           onPressed: () {
-          //             Navigator.of(context).pop();
+          //             Navigator.of(context).pop(); //esta parte cierra el dálogo
           //           },
-          //           child: const Text('opcion 1'),
+          //           child: const Text('opcion 1'), // esto es la opción que esta dentro del diálogo
           //         ),
           //       ],
           //     );
@@ -97,17 +98,17 @@ class _MyCustomFormState extends State<MyCustomForm> {
           // );
 
           // showDialog(context: context,
-          //   barrierDismissible: true, 
+          //   barrierDismissible: true, //esta parte te permite cerrar el diálogo al tocar fuera de él
           //   builder: (BuildContext context){
           //     return AlertDialog(
-          //       title: const Text('Warning'),
-          //       content: const Text('peligro: no pulses el boton'),
+          //       title: const Text('Warning'), //este es el título del diálogo
+          //       content: const Text('peligro: no pulses el boton'), //este es el contenido del diálogo
           //       actions: [
-          //         ElevatedButton(
+          //         ElevatedButton( //al pulsar este boton cerrara el dialogo
           //           onPressed: () {
           //             Navigator.of(context).pop();
           //           },
-          //           child: const Text('OK'),
+          //           child: const Text('OK'), //esto es el texto del boton
           //         ),
           //       ],
           //     );
@@ -116,8 +117,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
                      
           // ScaffoldMessenger.of(context).showSnackBar(
           //   const SnackBar(
-          //     content: Text('this is a SnackBar'),
-          //     duration: Duration(seconds: 4),            
+          //     content: Text('this is a SnackBar'), //esto es el contenido del snackbar
+          //     duration: Duration(seconds: 4), //esto es la duración del snackbar
           //   ),
           // );
 
